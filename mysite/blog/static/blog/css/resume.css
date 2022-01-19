@@ -1,0 +1,10 @@
+.pp{
+    display: block;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    width: 20rem;
+    height: auto;
+    border-radius: 50%;
+    border: black 2rem;
+  }

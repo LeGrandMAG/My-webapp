@@ -1,0 +1,93 @@
+body{
+  width: 100%;
+}
+.logo{
+  width: 100px;
+  position: absolute;
+  height: 100px;
+}
+
+header{
+  width: 78%;
+}
+
+.navMenu{
+  align-content: center;
+  display: flex ;
+  width: auto;
+  overflow: auto;
+
+}
+
+.primary-header{
+  align-items: center;
+  justify-content: space-between;
+}
+
+.primary-navigation{
+  list-style: none;
+  display: flex;
+  width: auto;
+  justify-content: flex-end;
+  align-content: flex-end;
+  margin: auto;
+  list-style: none;
+  align-items:flex-start
+}
+
+.secondary-navigation{
+  font-weight: 100;
+  width: auto;
+  margin: auto;
+  display: flex;
+  align-content: flex-start;
+}
+
+.active{
+  display: flex;
+  float: left;
+
+}
+
+nav a{
+  width: 100px;
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+nav a:hover{
+  text-transform: uppercase;
+  border-bottom: 2px solid black;
+  transition: 0.2s;
+}
+
+#sidebar { 
+  float:right;
+  text-align: center;
+  width:20%;
+  padding:10px;
+  background: rgba(195, 223, 252, 0.267);
+  height:100%;
+}
+
+.container{
+  float: left;
+  margin-left: 6rem;
+  width: 60%;
+}
+
+.blink {
+  font-weight: 300;
+  text-justify: auto;
+  text-align: center;
+  width: 15rem;
+  animation: blinker 1s step-start infinite;
+  
+}
+@keyframes blinker {
+  50% {
+      opacity: 0;
+  }

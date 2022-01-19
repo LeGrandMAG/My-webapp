@@ -1,0 +1,68 @@
+{% load static %}
+{% load blog_tags %}
+
+<!DOCTYPE html>
+<html style="font-family:'JetBrains Mono', monospace">
+<head>
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="SHORTCUT ICON" href="https://magmukendi.com/assets/images/FAVICON-profile.ico" type="image/x-icon" />
+    <title>{% block title %}Here we go{% endblock %}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains+Mono:wght@500&display=swap">
+    <link href="{% static 'blog/css/Home.css' %}" rel="stylesheet">
+</head>
+<body>
+    <header >
+        <!--<div ><img class="logo"src="{%static '/blog/images/my head.png' %}" alt="My image"></div>-->
+        <nav class="navMenu">
+            <div class="secondary-navigation"><h1> THIS IS MY HOUSE </h1></div>
+            <ul id="primary-navigation" class="primary-navigation">
+                <li class="active">
+                    <a href="#">
+                        <span aria-hidden="true"></span> Home
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#">
+                        <span aria-hidden="true"></span> Home
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#">
+                        <span aria-hidden="true"></span> About
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#">
+                        <span aria-hidden="true"></span> My Blog
+                    </a>
+                </li>
+            </ul>
+            
+        </nav>
+    </header>
+    <div class="container">
+    <!--<div class="blink">It's<b> {% now "jS F  f"%}</b></div> -->
+    {% block content %}
+    {% endblock %}
+    </div>
+
+    <div id="sidebar">
+        <h2 class="side-text">My Blog</h2>
+        <p class="side-text">This is my blog. I've written {%total_posts%} posts so far.</p>
+        <h3>Latest posts</h3>
+        {% show_latest_posts 3 %}
+        
+        <h3>Most commented posts</h3>
+        {% get_most_commented_posts as most_commented_posts %}
+        <ul>
+        {% for post in most_commented_posts %}
+        <li>
+        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+        </ul>
+        
+    </div>
+
+</body>
+</html>
