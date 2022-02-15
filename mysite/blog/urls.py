@@ -6,7 +6,7 @@ app_name = 'blog'
 
 
 urlpatterns = [
-    path('mycv/', views.list, name='list'),
+    path('a', views.list, name='list'),
     path('', views.post_list, name='post_list'),
     
     path('', views.PostListView.as_view(), name='post_list'),

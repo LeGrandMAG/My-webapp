@@ -1,7 +1,9 @@
 {% extends "blog/base.html" %}
 {% block title %}My Blog{% endblock %}
 
+<div class="container"></div>
 {% block content %}
+
     <h1><b>My Blog</b></h1>
     {% if tag %}
         <h2>Posts tagged with "{{ tag.name }}"</h2>
@@ -33,7 +35,9 @@
         {{ post.body|truncatewords:20|linebreaks }}
     {% endfor %}
     {% include "pagination.html" with page=posts %}
+
 {% endblock %}
+</div>
 
 <div class="pagination">
     <span class="step-links">
